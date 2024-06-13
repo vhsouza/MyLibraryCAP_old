@@ -6,6 +6,7 @@ using CV_BOOKSREPORT from '../db/schema';
 service CatalogService {
     
     @odata.draft.enabled
+    @requires: 'authenticated-user'
     entity Books           as projection on Library.Books;
 
     entity Authors         as projection on Library.Authors;
@@ -15,8 +16,10 @@ service CatalogService {
     entity BooksText       as projection on Library.Books.texts;
     
     @readonly
+    @requires: 'authenticated-user'
     entity CV_BooksReport2 as projection on CV_BOOKSREPORT2;
 
     @readonly
+    @requires: 'authenticated-user'
     entity CV_BooksReport  as projection on CV_BOOKSREPORT;
 };
