@@ -154,7 +154,7 @@
     </shape>
     <shape modelObjectName="LOCALIZED_MY_LIBRARY_BOOKS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
       <upperLeftCorner x="620" y="30"/>
-      <rectangleSize width="267.572265625"/>
+      <rectangleSize width="267"/>
     </shape>
   </shapes>
 </layout>
