@@ -15,6 +15,18 @@
       "version": "1.11.2",
       "toolsId": "d25a1530-de45-4bf4-bb90-53d147a0d585"
     },
+    "crossNavigation": {
+      "inbounds": {
+        "mylibrary-manage": {
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "semanticObject": "mylibrary",
+          "action": "manage"
+        }
+      }
+    },
     "dataSources": {
       "mainService": {
         "uri": "/odata/v4/service/Library/",
@@ -177,5 +189,9 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "mylibrary.service"
   }
 }
