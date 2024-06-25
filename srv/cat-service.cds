@@ -16,7 +16,7 @@ service CatalogService {
     entity BooksText       as projection on Library.Books.texts;
     
     @readonly
-    @requires: 'authenticated-user'
+    @requires: 'Admin'
     entity CV_BooksReport2 as projection on CV_BOOKSREPORT2;
 
     @readonly
