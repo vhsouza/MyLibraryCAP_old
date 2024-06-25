@@ -1,7 +1,7 @@
 {
-    "_version": "1.58.0",
+    "_version": "1.49.0",
     "sap.app": {
-        "id": "bookslrp",
+        "id": "my.library.booksreport",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -12,18 +12,18 @@
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
-            "version": "1.11.2",
-            "toolsId": "d25a1530-de45-4bf4-bb90-53d147a0d585"
+            "version": "1.10.0",
+            "toolsId": "9ee749f3-8df4-44b7-a26c-94400df82b62"
         },
         "crossNavigation": {
             "inbounds": {
-                "mylibrary-manage": {
+                "mylibrary-monitor": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "mylibrary",
-                    "action": "manage"
+                    "action": "monitor"
                 }
             }
         },
@@ -58,7 +58,7 @@
     "sap.ui5": {
         "flexEnabled": true,
         "dependencies": {
-            "minUI5Version": "1.119.2",
+            "minUI5Version": "1.115.0",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
@@ -74,7 +74,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "bookslrp.i18n.i18n"
+                    "bundleName": "my.library.booksreport.i18n.i18n"
                 }
             },
             "": {
@@ -100,86 +100,42 @@
             "routes": [
                 {
                     "pattern": ":?query:",
-                    "name": "BooksList",
-                    "target": "BooksList"
+                    "name": "CV_BooksReportList",
+                    "target": "CV_BooksReportList"
                 },
                 {
-                    "pattern": "Books({key}):?query:",
-                    "name": "BooksObjectPage",
-                    "target": "BooksObjectPage"
-                },
-                {
-                    "pattern": "Books({key})/Copies({key2}):?query:",
-                    "name": "BookCopiesObjectPage",
-                    "target": "BookCopiesObjectPage"
-                },
-                {
-                    "pattern": "Books({key})/Authors({key2}):?query:",
-                    "name": "Books_BookAuthorsObjectPage",
-                    "target": "Books_BookAuthorsObjectPage"
+                    "pattern": "CV_BooksReport({key}):?query:",
+                    "name": "CV_BooksReportObjectPage",
+                    "target": "CV_BooksReportObjectPage"
                 }
             ],
             "targets": {
-                "BooksList": {
+                "CV_BooksReportList": {
                     "type": "Component",
-                    "id": "BooksList",
+                    "id": "CV_BooksReportList",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "contextPath": "/Books",
+                            "entitySet": "CV_BooksReport",
                             "variantManagement": "Page",
                             "navigation": {
-                                "Books": {
+                                "CV_BooksReport": {
                                     "detail": {
-                                        "route": "BooksObjectPage"
+                                        "route": "CV_BooksReportObjectPage"
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "BooksObjectPage": {
+                "CV_BooksReportObjectPage": {
                     "type": "Component",
-                    "id": "BooksObjectPage",
+                    "id": "CV_BooksReportObjectPage",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "Books",
-                            "navigation": {
-                                "Copies": {
-                                    "detail": {
-                                        "route": "Books_BookCopiesObjectPage"
-                                    }
-                                },
-                                "Authors": {
-                                    "detail": {
-                                        "route": "Books_BookAuthorsObjectPage"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "BookCopiesObjectPage": {
-                    "type": "Component",
-                    "id": "BookCopiesObjectPage",
-                    "name": "sap.fe.templates.ObjectPage",
-                    "options": {
-                        "settings": {
-                            "editableHeaderContent": false,
-                            "contextPath": "/Books/Copies"
-                        }
-                    }
-                },
-                "Books_BookAuthorsObjectPage": {
-                    "type": "Component",
-                    "id": "Books_BookAuthorsObjectPage",
-                    "name": "sap.fe.templates.ObjectPage",
-                    "options": {
-                        "settings": {
-                            "editableHeaderContent": false,
-                            "entitySet": "Books_BookAuthors"
+                            "entitySet": "CV_BooksReport"
                         }
                     }
                 }
